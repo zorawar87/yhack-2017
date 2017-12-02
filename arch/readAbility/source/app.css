@@ -1,0 +1,54 @@
+cloudflare-app[app="read-ability"] {
+  display: block;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1em 2em;
+  max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+  cloudflare-app[app="read-ability"] {
+    margin: .5em 0;
+  }
+}
+
+.controlstyle a{ /*links inside DIV sizecontroldiv*/
+outline:none;
+}
+
+.controlstyle a img{ /*image links inside DIV sizecontroldiv*/
+border-width:0;
+}
+
+.controlstyle a.selectedcontrol img{ /*selected control's image*/
+border-bottom:4px solid darkred;
+}
+
+cloudflare-app[app="read-ability"][data-position="left"] {
+  justify-content: flex-start;
+}
+
+cloudflare-app[app="read-ability"][data-position="center"] {
+  justify-content: center;
+}
+
+cloudflare-app[app="read-ability"][data-position="right"] {
+  justify-content: flex-end;
+}
+
+cloudflare-app[app="read-ability"] > a {
+  display: block;
+  text-decoration: none;
+  flex: 0 0 auto;
+  height: 100%;
+}
+
+cloudflare-app[app="read-ability"] > a + a {
+  margin-left: .2em;
+}
+
+cloudflare-app[app="read-ability"] > a > svg {
+  display: block;
+  height: 100%;
+  width: auto;
+}

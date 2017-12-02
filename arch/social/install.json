@@ -1,0 +1,188 @@
+{
+  "resources": {
+    "body": [
+      {
+        "type": "script",
+        "src": "./build/icons/bootstrapper.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.github.enabled",
+        "src": "./build/icons/github.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.instagram.enabled",
+        "src": "./build/icons/instagram.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.mail.enabled",
+        "src": "./build/icons/mail.js"
+      },
+      {
+        "type": "script",
+        "if": "options.icons.youtube.enabled",
+        "src": "./build/icons/youtube.js"
+      },
+      {
+        "type": "style",
+        "src": "./build/app.css"
+      },
+      {
+        "type": "script",
+        "src": "./build/app.js"
+      }
+    ]
+  },
+  "preview": {
+    "handlers": [
+      {
+        "options": ["color", "container", "position"],
+        "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
+      },
+      {
+        "options": ["size"],
+        "execute": "INSTALL_SCOPE.setSize(INSTALL_OPTIONS)"
+      }
+    ]
+  },
+  "options": {
+    "properties": {
+      "color": {
+        "order": 1,
+        "title": "Color",
+        "description": "Set to “auto” use brand colors.",
+        "type": "string",
+        "format": "color",
+        "default": "auto"
+      },
+      "size": {
+        "order": 2,
+        "title": "Size",
+        "type": "number",
+        "format": "slider",
+        "minimum": 1,
+        "maximum": 5,
+        "step": 0.5,
+        "default": "3"
+      },
+      "container": {
+        "order": 3,
+        "title": "Location",
+        "description": "Select where you want the icons to be added to your site.",
+        "type": "object",
+        "format": "element",
+        "default": {
+          "method": "prepend",
+          "selector": "body"
+        }
+      },
+      "position": {
+        "order": 4,
+        "title": "Horizontal alignment",
+        "type": "string",
+        "default": "center",
+        "enum": [
+          "left",
+          "center",
+          "right"
+        ],
+        "enumNames": {
+          "left": "Left",
+          "center": "Center",
+          "right": "Right"
+        }
+      },
+      "icons": {
+        "order": 4,
+        "title": "Icons",
+        "description": "Check the icons you’d like to add.",
+        "type": "object",
+        "properties": {
+          "github": {
+            "order": 17,
+            "title": "GitHub",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.github.enabled": true
+                },
+                "title": "Username",
+                "description": "As in github.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "instagram": {
+            "order": 20,
+            "title": "Instagram",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.instagram.enabled": true
+                },
+                "title": "Username",
+                "description": "As in instagram.com/<strong>username</strong>",
+                "type": "string"
+              }
+            }
+          },
+          "mail": {
+            "order": 23,
+            "title": "Mail",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.mail.enabled": true
+                },
+                "title": "Username",
+                "type": "string",
+                "format": "email"
+              }
+            }
+          },
+          "youtube": {
+            "order": 42,
+            "title": "YouTube",
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "title": "Show",
+                "type": "boolean",
+                "default": false
+              },
+              "username": {
+                "showIf": {
+                  "icons.youtube.enabled": true
+                },
+                "title": "Username",
+                "description": "As in: <br>- youtube.com/<strong>username</strong> <br>- youtube.com/<strong>user/username</strong> <br>- youtube.com/<strong>c/username</strong>",
+                "placeholder": "username",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
