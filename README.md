@@ -1,11 +1,8 @@
-# YHACK 2017 #
-okay let's do this team. 
+# [Recursive Acronym]#
+  * cloud flare app that renders embedded LaTeX code to beautiful math
 
-## potential technoloiges ##
-### cloudflare app ###
-  * LaTeX math renderer
-  * buy with BitCoin
-  * carbon footprint calculator
-
-### Google Cloud API ###
-### fb/messenger API ###
+## Components ## 
+1. Analyse source
+2. Render LaTeX
+3. replace in source
+4. final cloud flare integration
